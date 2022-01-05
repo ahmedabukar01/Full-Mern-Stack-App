@@ -1,5 +1,5 @@
 import './sidebar.css';
-import aboutMe from '../pages/assets/about.jpg';
+import aboutMe from '../../pages/assets/about.jpg';
 
 const Sidebar = () => {
     return (
