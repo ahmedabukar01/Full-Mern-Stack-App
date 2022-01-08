@@ -1,5 +1,5 @@
 import './header.css';
-import setup from '../pages/assets/setup.jpg';
+import setup from '../../pages/assets/setup.jpg';
 
 const Header = () => {
     return (
