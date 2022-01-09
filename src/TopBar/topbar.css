@@ -31,8 +31,12 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+    cursor: pointer;
 }
-
+a{
+    text-decoration: none;
+    color: inherit;
+}
 .toplist{
     display: flex;
     justify-content: center;

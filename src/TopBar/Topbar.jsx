@@ -1,7 +1,9 @@
 import './topbar.css';
 import image from './images/hacker.jpg';
+import {Link} from 'react-router-dom';
 
 const Topbar = () =>{
+    const user = false;
 
     return(
         <div className="top">
@@ -13,19 +15,42 @@ const Topbar = () =>{
             </div>
             <div className="topcenter">
                 <ul className="toplist">
-                    <li className="topListIcon">Home</li>
-                    <li className="topListIcon">About</li>
-                    <li className="topListIcon">Contact</li>
-                    <li className="topListIcon">Write</li>
-                    <li className="topListIcon">logout</li>
+                    <li className="topListIcon">
+                        <Link to="/">Home</Link>
+                    </li>
+                    <li className="topListIcon">
+                    <Link to="/about">About</Link>
+                    </li>
+                    <li className="topListIcon">
+                    <Link to="/contact">Contact</Link>
+                    </li>
+                    <li className="topListIcon">
+                    <Link to="/write">Write</Link>
+                    </li>
+                    <li className="topListIcon">
+                     {user && "Logout"}
+                    </li>
                 </ul>
             </div>
             <div className="topright">
-                <img 
-                 className='topImg'
-                 src={image}
-                 alt=""
-                 />
+                {
+                    user ? (
+                        <img 
+                        className='topImg'
+                        src={image}
+                        alt=""
+                        />
+                    ): (
+                        <ul className="toplist">
+                            <li className="topListIcon">
+                                <Link to="/login">Login</Link>
+                            </li>
+                            <li className="topListIcon">
+                                <Link to="/register" >Register</Link>
+                            </li>
+                        </ul>
+                    )
+                }
                  <i className="topsearchIcon fas fa-search"></i>
             </div>
         </div>
